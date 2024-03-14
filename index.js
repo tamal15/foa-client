@@ -1,18 +1,13 @@
-const express = require("express");
+const express = require ("express");
 const cors = require("cors");
 require("dotenv").config();
-const mongoose = require("mongoose");
 
 const app = express();
 const port = process.env.PORT || 5000;
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 // middleware
-app.use(
-  cors({
-    origin: ["http://localhost:5173", "http://fnabd.biz"],
-  })
-);
+app.use(cors())
 app.use(express.json());
 
 const uri =
